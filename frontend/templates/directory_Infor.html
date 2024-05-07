@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .infor-directory {
+            font-size: 2rem;
+            font-weight: 600;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="infor-directory">Thông tin chi tiết của thư mục:<br></h1>
+    <ul>
+        {% for info in directory_Info %}
+        <li> {{ info }} </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

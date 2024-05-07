@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .play-audio {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="play-audio">
+        <h1>Phát audio</h1>
+            <audio controls>
+                <source src="static/media/{{open_file}}" type = "audio/mpeg">
+            </audio>
+    </div>
+</body>
+</html>

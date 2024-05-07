@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installed Apps Count</title>
+    <link rel="stylesheet" 
+    type="text/css"
+    href="{{ url_for('static', filename='css/main.css') }}">
+    <style>
+
+        .tree .heading {
+            padding: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .form-group input {
+            display: none;
+        }
+        .container {
+            justify-content: left;
+            left: 120px;
+        }
+        .form-submit {
+            background-color: #1ac7b6;
+            margin-top: 12px;
+            padding: 12px 0px;
+            font-weight: 600;
+            color: #ffff;
+            border: none;
+            font-size: 14px;
+            border-radius: 8px;
+            text-align: left;
+            cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; 
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading"> Danh sách bảng: </h1>
+    <div class="tree">
+        <div class="container">
+            <div class="row gx-3">
+                {% for table in open_file %}
+                    <div class="col-3">
+                    <form action="/" method="post">
+                            <div class="form-group">
+                                <input type="hidden" name="link-file" value="{{direction}} {{table}}">
+                                <img src="{{ url_for('static', filename='img/file_Img.png')}}" alt="Folder" width="100" height="50">
+                                <input type="hidden" name="handle-option" value="get_data_from_sql">
+                                <button type="submit" class="form-submit">Mở bảng {{ table }}</button>
+                            </div>
+                        </form>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Types</title>
+</head>
+<style>
+    .container-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table, td, th {
+        border: 1px solid;
+    }
+
+    table {
+        width: 50%;
+        border-collapse: collapse;
+    }
+</style>
+<body>
+    <div class="container-list">
+        <h1>Phân loại số lượng tệp tin</h1>
+        <table>
+            <tr>
+              <th>Loại tệp tin</th>
+              <th>Số lượng</th>
+            </tr>
+            {% for file_type, count in type_file.items() %}
+                <tr>
+                    <th> {{ file_type }} </th>
+                    <th> {{ count }}</th>
+                </tr>
+            {% endfor %}
+          </table>
+    </div>
+</body>
+</html>
